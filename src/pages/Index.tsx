@@ -173,7 +173,7 @@ const Index = () => {
 
           {/* Category Filter */}
           <div className="flex gap-3 overflow-x-auto pb-4 mb-8 scrollbar-hide justify-center flex-wrap">
-            {Categories.map((cat) => (
+            {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
