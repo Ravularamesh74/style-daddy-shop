@@ -239,6 +239,7 @@ const Index = () => {
 
       <WhatsAppButton />
       <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} items={cart} onUpdateQty={updateQty} onRemove={removeItem} />
+      <Link to="/checkout">Go to Checkout</Link>
     </div>
   );
 };

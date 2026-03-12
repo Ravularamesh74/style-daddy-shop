@@ -2,25 +2,36 @@ import { NavLink as RouterNavLink, NavLinkProps } from "react-router-dom";
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
-interface NavLinkCompatProps extends Omit<NavLinkProps, "className"> {
-  className?: string;
+type NavLinkCompatProps = NavLinkProps & {
   activeClassName?: string;
   pendingClassName?: string;
-}
+};
 
 const NavLink = forwardRef<HTMLAnchorElement, NavLinkCompatProps>(
-  ({ className, activeClassName, pendingClassName, to, ...props }, ref) => {
+  (
+    {
+      className,
+      activeClassName = "text-primary font-semibold",
+      pendingClassName = "opacity-70",
+      ...props
+    },
+    ref
+  ) => {
     return (
       <RouterNavLink
         ref={ref}
-        to={to}
-        className={({ isActive, isPending }) =>
-          cn(className, isActive && activeClassName, isPending && pendingClassName)
-        }
         {...props}
+        className={({ isActive, isPending }) =>
+          cn(
+            "transition-colors duration-200",
+            className,
+            isActive && activeClassName,
+            isPending && pendingClassName
+          )
+        }
       />
     );
-  },
+  }
 );
 
 NavLink.displayName = "NavLink";
