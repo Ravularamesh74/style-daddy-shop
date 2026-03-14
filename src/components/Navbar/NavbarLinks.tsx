@@ -1,14 +1,31 @@
 // NavbarLinks.tsx
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-const NavbarLinks = () => {
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "Shop", path: "/shop" },
+  { name: "Cart", path: "/cart" },
+  { name: "Checkout", path: "/checkout" },
+];
+
+const NavbarLinks: React.FC = () => {
   return (
-    <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/shop">Shop</Link></li>
-      <li><Link to="/cart">Cart</Link></li>
-      <li><Link to="/checkout">Checkout</Link></li>
+    <ul className="flex gap-6 text-gray-700 font-medium">
+      {navLinks.map((link, index) => (
+        <li key={index}>
+          <NavLink
+            to={link.path}
+            className={({ isActive }) =>
+              `transition-colors hover:text-blue-600 ${
+                isActive ? "text-blue-600 font-semibold" : ""
+              }`
+            }
+          >
+            {link.name}
+          </NavLink>
+        </li>
+      ))}
     </ul>
   );
 };
