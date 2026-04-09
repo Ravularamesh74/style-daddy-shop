@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
 import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
+import Checkout from "./pages/Checkout";
 import { type CartItem } from "@/components/CartDrawer";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const AppContent = () => {
         path="/product/:id"
         element={<ProductDetail cart={cart} setCart={setCart} />}
       />
+      <Route path="/checkout" element={<Checkout />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
