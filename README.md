@@ -40,4 +40,75 @@ Inspired by real-world fashion branding, this project aims to deliver a smooth U
 
 ---
 
+---
+
+## 🧠 Tech Stack
+
+- **Frontend:** HTML, CSS, JavaScript  
+- **Backend:** Node.js, Express *(if used)*  
+- **Database:** MongoDB *(if used)*  
+
+---
+
 ## 📂 Project Structure
+
+```
+
+style-daddy-shop/
+│── frontend/
+│── backend/
+│── assets/
+│── public/
+│── routes/
+│── models/
+│── config/
+│── README.md
+
+````
+
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/Ravularamesh74/style-daddy-shop.git
+cd style-daddy-shop
+npm install
+npm start
+````
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file:
+
+```
+PORT=5000
+DB_URI=your_database_url
+JWT_SECRET=your_secret_key
+```
+
+---
+
+## 📌 Future Improvements
+
+* Wishlist feature
+* Payment integration
+* Admin dashboard
+* Product reviews
+
+---
+
+## 👨‍💻 Author
+
+Ramesh
+GitHub: [https://github.com/Ravularamesh74](https://github.com/Ravularamesh74)
+
+---
+```
+## 📄 License
+
+This project is licensed under the MIT License.
+```
+
